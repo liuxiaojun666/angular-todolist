@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --deploy-url /angular-todolist/",
+    "build": "ng build --base-href /angular-todolist/ --deploy-url /angular-todolist/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
