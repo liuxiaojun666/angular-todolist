@@ -1,0 +1,18 @@
+<div class="item-selector">
+  <nz-checkbox-wrapper *ngIf="((schedule | async) || []).length; else empty" style="width: 100%;" (nzOnChange)="logChange($event)">
+    <div class="schedule-item" *ngFor = "let menu of (schedule | async)">
+      <div class="wrapper-left">
+        <label nz-checkbox [nzValue]="menu.id" [ngModel]="menu.checked" (ngModelChange)="checkedOnChange($event, menu.id)">
+          <s *ngIf="menu.checked" style="opacity: 0.5;">{{menu.title}}</s>
+          <span *ngIf="!menu.checked">{{menu.title}}</span>
+        </label>
+      </div>
+      <div class="wrapper-right">
+        <button nz-button nzType="danger" (click)="deleteSchedule(menu.id)">删 除</button>
+      </div>
+    </div>
+  </nz-checkbox-wrapper>
+  <ng-template #empty>
+    <div class="empty-wrapper">暂无待办事项</div>
+  </ng-template>
+</div>

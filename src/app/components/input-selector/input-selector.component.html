@@ -1,0 +1,4 @@
+<div class="input-selector">
+  <input nz-input placeholder="待办事项" [(ngModel)]="value" maxlength="24" (keydown)="inputKeydown($event)" />
+  <button nz-button nzType="primary" (click)="scheduleSave()">添 加</button>
+</div>
